@@ -1,0 +1,44 @@
+[System]
+Name='gift'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=6
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='Friend'
+Range=[0 20]
+NumMFs=3
+MF1='hi/bye':'trapmf',[-13.6 -1.55 -0.886 5.84656084656085]
+MF2='everydayfriend':'trimf',[5.21 9.37 15.1058201058201]
+MF3='bffs':'trapmf',[14.5767195767196 19.2 20.8 27.5]
+
+[Input2]
+Name='Party_location'
+Range=[0 100]
+NumMFs=3
+MF1='cafe':'trimf',[-41.7 0 34.7883597883598]
+MF2='restaurant':'trimf',[30 50 66.005291005291]
+MF3='hotel':'trimf',[63.3597883597883 100 142]
+
+[Output1]
+Name='Gift'
+Range=[100 2000]
+NumMFs=3
+MF1='mf1':'trimf',[-691.7 100 891.7]
+MF2='mf2':'trimf',[258.3 1050 1842]
+MF3='mf3':'trimf',[1208 2000 2792]
+
+[Rules]
+1 1, 1 (1) : 1
+2 2, 2 (1) : 1
+3 3, 3 (1) : 1
+1 2, 1 (1) : 1
+3 1, 3 (1) : 1
+2 3, 2 (1) : 1
